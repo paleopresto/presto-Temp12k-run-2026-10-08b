@@ -391,9 +391,11 @@ main <- function() {
 
   recs <- jsonlite::fromJSON(ts_path, simplifyVector = TRUE,
                              simplifyDataFrame = FALSE, simplifyMatrix = FALSE)
-  # keep paper's seasonal subset: annual / summerOnly / winterOnly
+  # keep paper's seasonal subset: annual / summerOnly / winterOnly.
+  # presto_season_filter: false skips it, for pools that already keep one
+  # record per site and proxy (annual preferred) under free-text labels.
   keep_season <- function(r) tolower(r$seasonalityGeneral) %in% c("annual", "summeronly", "winteronly")
-  recs <- Filter(keep_season, recs)
+  if (!identical(cfg$presto_season_filter, FALSE)) recs <- Filter(keep_season, recs)
   cat(sprintf("[run_methods] %d records after seasonality filter\n", length(recs)))
 
   fts <- build_fts(recs)

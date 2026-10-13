@@ -50,3 +50,9 @@ advanced:
                                   # => full-record mean, which reproduces the
                                   # published uncertainty band best (DCC/CPS
                                   # real-ensemble test). Uncomment to override.
+
+# ---- PReSto pool runs: the pool already keeps one record per site and proxy
+#      (annual preferred, seasonal kept where that is all there is), so skip
+#      the paper's annual/summerOnly/winterOnly label filter, which would drop
+#      seasonal-only sites and records with free-text labels ("Summer", "7").
+presto_season_filter: false

@@ -13,3 +13,9 @@ pool. Everything that defines the run is committed here:
   until that is merged upstream.
 
 Committing `query_params.json` triggers the reconstruction workflow.
+
+The paper's seasonality filter (annual / summerOnly / winterOnly labels) is
+switched off here (`presto_season_filter: false` in `config/user_config.yml`;
+switch added to `scripts/run_methods.R` and `scripts/gam_method.py`), because
+the r6 pool applies the one-record-per-site rule itself. With the filter on,
+run 38454885930 kept 1488 of 1764 temperature records and matched r5 exactly.
