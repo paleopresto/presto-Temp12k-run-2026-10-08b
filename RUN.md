@@ -6,7 +6,7 @@ pool. Everything that defines the run is committed here:
 - `query_params.json` (`mode: bundle`): the pool bundle's URL and sha256,
   and its TSids. Pool, criteria and deduplication:
   [paleopresto/presto-recipes](https://github.com/paleopresto/presto-recipes/tree/pools/pools),
-  release [pools-2026-10-08b-r5](https://github.com/paleopresto/presto-recipes/releases/tag/pools-2026-10-08b-r5).
+  release [pools-2026-10-08b-r6](https://github.com/paleopresto/presto-recipes/releases/tag/pools-2026-10-08b-r6).
 - The algorithm's config, from presto-recipes `runs/presto-Temp12k/2026-10-08b/`
   (or the template default where that directory has none).
 - The workflow and container code, from the template's `pool-bundles` branch
